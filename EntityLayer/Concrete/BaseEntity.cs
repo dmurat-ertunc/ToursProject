@@ -9,7 +9,7 @@ namespace EntityLayer.Concrete
     public class BaseEntity
     {
         public long id { get; set; }
-        public DateTime addDate { get; set; }
-        public bool isDeleted { get; set; }
+        public DateTime addDate { get; set; } = DateTime.Now;
+        public bool isDeleted { get; set; } = false;
     }
 }
