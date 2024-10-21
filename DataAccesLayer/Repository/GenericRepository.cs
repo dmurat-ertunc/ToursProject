@@ -1,4 +1,4 @@
-﻿,using DataAccesLayer.Abstract;
+﻿using DataAccesLayer.Abstract;
 using DataAccesLayer.Concrete;
 using System;
 using System.Collections.Generic;
