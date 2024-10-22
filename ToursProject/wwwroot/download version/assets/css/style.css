@@ -4479,7 +4479,7 @@ Header Customization
 }
 
 .hero-layout {
-  position: relative;
+    position: relative;
 }
 .hero-layout .hero-img {
   position: relative;
