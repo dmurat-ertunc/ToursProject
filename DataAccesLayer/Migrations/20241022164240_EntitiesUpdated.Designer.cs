@@ -4,6 +4,7 @@ using DataAccesLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccesLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20241022164240_EntitiesUpdated")]
+    partial class EntitiesUpdated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -139,7 +142,7 @@ namespace DataAccesLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TblContact");
+                    b.ToTable("TblConctacts");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Services", b =>
@@ -201,7 +204,7 @@ namespace DataAccesLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TblSocialMedia");
+                    b.ToTable("TblSocailMedia");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Stations", b =>
@@ -278,7 +281,7 @@ namespace DataAccesLayer.Migrations
 
                     b.HasIndex("TourId");
 
-                    b.ToTable("TblTicketSold");
+                    b.ToTable("TblTicketsSold");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.TourTime", b =>

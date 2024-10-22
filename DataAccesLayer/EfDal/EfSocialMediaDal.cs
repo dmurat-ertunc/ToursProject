@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccesLayer.EfDal
 {
-    public class EfSocialMediaDal : GenericRepository<SocailMedia>, ISocialMediaDal
+    public class EfSocialMediaDal : GenericRepository<SocialMedia>, ISocialMediaDal
     {
         public EfSocialMediaDal(Context context) : base(context)
         {

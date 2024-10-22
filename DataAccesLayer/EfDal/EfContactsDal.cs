@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccesLayer.EfDal
 {
-    public class EfContactsDal : GenericRepository<Conctacts>, IContactsDal
+    public class EfContactsDal : GenericRepository<Contact>, IContactsDal
     {
         public EfContactsDal(Context context) : base(context)
         {

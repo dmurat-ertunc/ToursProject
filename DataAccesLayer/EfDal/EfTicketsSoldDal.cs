@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccesLayer.EfDal
 {
-    public class EfTicketsSoldDal : GenericRepository<TicketsSold>, ITicketsSoldDal
+    public class EfTicketsSoldDal : GenericRepository<TicketSold>, ITicketsSoldDal
     {
         public EfTicketsSoldDal(Context context) : base(context)
         {

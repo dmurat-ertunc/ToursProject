@@ -8,10 +8,9 @@ namespace EntityLayer.Concrete
 {
     public class Stations : BaseEntity
     {
-        public string station { get; set; }
-        public long CitiesId { get; set; }
-        public Cities Cities { get; set; }
-        public ICollection<Tours> Tours { get; set; }
-
+        public string Name { get; set; }
+        public long CityId { get; set; }
+        public Cities City { get; set; }
     }
+
 }

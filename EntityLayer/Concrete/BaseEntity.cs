@@ -8,8 +8,9 @@ namespace EntityLayer.Concrete
 {
     public class BaseEntity
     {
-        public long id { get; set; }
-        public DateTime addDate { get; set; } = DateTime.Now;
-        public bool isDeleted { get; set; } = false;
+        public long Id { get; set; }  // Changed to 'Id' for PascalCase consistency
+        public DateTime AddDate { get; set; } = DateTime.Now;  // Corrected to PascalCase
+        public bool IsDeleted { get; set; } = false;  // Corrected to PascalCase
     }
+
 }

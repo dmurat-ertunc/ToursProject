@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccesLayer.Abstract
 {
-    public interface ITicketsSoldDal : IGenericDal<TicketsSold>
+    public interface ITicketsSoldDal : IGenericDal<TicketSold>
     {
     }
 }

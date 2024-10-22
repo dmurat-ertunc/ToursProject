@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class Services : BaseEntity
+    public class Services : BaseEntity  // Singular form for class name
     {
-        public string name {  get; set; }
-        public ICollection<Tours> Tours { get; set; }
+        public string Name { get; set; }  // Corrected to PascalCase
+        public ICollection<Tours> Tours { get; set; }  // Singular class name for Tour
     }
+
 }

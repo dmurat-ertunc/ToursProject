@@ -8,7 +8,8 @@ namespace EntityLayer.Concrete
 {
     public class TourTime : BaseEntity
     {
-        public string dayNight {  get; set; }
-        public ICollection<Tours> Tours { get; set; }
+        public string DayNight { get; set; }  
+        public ICollection<Tours> Tours { get; set; }  
     }
+
 }

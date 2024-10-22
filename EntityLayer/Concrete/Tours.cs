@@ -12,16 +12,16 @@ namespace EntityLayer.Concrete
         public string description { get; set; }
         public int price { get; set; }
         public long ToursTimeId { get; set; }
-        public TourTime TourTime { get; set; }
+        public TourTime TourTime { get; set; }  // Navigation property, this can be renamed to TourTimeDetails or similar
         public string fotoUrl1 { get; set; }
         public string fotoUrl2 { get; set; }
         public string fotoUrl3 { get; set; }
-        public DateTime tourTime { get; set; }
+        public DateTime TourDateTime { get; set; } // Changed name to avoid conflict
         public ICollection<Comments> Comments { get; set; }
-        public ICollection<TicketsSold> TicketsSolds { get; set; }
+        public ICollection<TicketSold> TicketsSolds { get; set; }
         public ICollection<Stations> Stations { get; set; }
         public ICollection<Services> Services { get; set; }
         public ICollection<Cities> Cities { get; set; }
-
     }
+
 }
