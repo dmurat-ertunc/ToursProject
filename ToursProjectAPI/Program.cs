@@ -17,6 +17,22 @@ builder.Services.AddDbContext<Context>();
 
 builder.Services.AddScoped<ICitiesDal,EfCitiesDal>();
 builder.Services.AddScoped<ICitiesService, CitiesManager>();
+builder.Services.AddScoped<ICommentsDal, EfCommentsDal>();
+builder.Services.AddScoped<ICommentsService, CommentsManager>();
+builder.Services.AddScoped<IContactsDal, EfContactsDal>();
+builder.Services.AddScoped<IContactService, ContactManager>(); 
+builder.Services.AddScoped<IServiceDal, EfServiceDal>();    
+builder.Services.AddScoped<IServicesService, ServicesManager>();
+builder.Services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
+builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
+builder.Services.AddScoped<IStationsDal, EfStationsDal>();
+builder.Services.AddScoped<IStationsService, StationsManager>();
+builder.Services.AddScoped<ITicketsSoldDal, EfTicketsSoldDal>();
+builder.Services.AddScoped<ITicketSoldService, TicketSoldManager>();
+builder.Services.AddScoped<IToursDal, EfToursDal>();
+builder.Services.AddScoped<IToursService, ToursManager>();
+builder.Services.AddScoped<ITourTimeDal, EfTourTimeDal>();
+builder.Services.AddScoped<ITourTimeService, TourTimeManager>();
 
 
 var app = builder.Build();
