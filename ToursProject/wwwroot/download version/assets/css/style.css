@@ -52,18 +52,6 @@ Version: 1.0.0
 /*------------------- 1.1. Mixin -------------------*/
 /*------------------- 1.2. Function -------------------*/
 /*------------------- 1.3. Variable-------------------*/
-/* Global SÄ±fÄ±rlama Kodu */
-* {
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box;
-}
-
-section, div, article {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
 :root {
   --theme-color: #ff681a;
   --theme-color2: #37d4d9;
@@ -332,71 +320,47 @@ h6 {
   .container-md,
   .container-sm,
   .container {
-        max-width: calc(var(--main-container) + var(--container-gutters));
-        padding-left: calc(var(--container-gutters) / 2);
-        padding-right: calc(var(--container-gutters) / 2);
+    max-width: calc(var(--main-container) + var(--container-gutters));
+    padding-left: calc(var(--container-gutters) / 2);
+    padding-right: calc(var(--container-gutters) / 2);
   }
-
   .outer-wrap {
     max-width: 1300px;
     background-color: var(--white-color);
     margin-left: auto;
     margin-right: auto;
-        box-shadow: 0px 13px 48px 0px rgba(255, 104, 26, 0.07);
-        margin-top: -70px;
-        padding-bottom: 37px;
-    }
+    box-shadow: 0px 13px 48px 0px rgba(255, 104, 26, 0.07);
+    margin-top: -70px;
+    padding-bottom: 37px;
   }
-
-/* Container ve Row DÃ¼zenlemeleri */
-.container,
-.container-fluid {
-    max-width: 100% !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+  .outer-wrap.wrap-style1 {
+    padding-top: calc(var(--section-space) - 40px);
+    padding-bottom: calc(var(--section-space) - 80px);
+  }
 }
-
-.row {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0;
-    padding-right: 0;
-}}
-
 @media only screen and (max-width: 1600px) {
   .container-fluid.px-0 {
-        max-width: 100%;
-        padding-left: 0 !important; /* Sol padding sÄ±fÄ±rlandÄ± */
-        padding-right: 0 !important; /* SaÄŸ padding sÄ±fÄ±rlandÄ± */
-        margin-left: 0 !important; /* Sol margin sÄ±fÄ±rlandÄ± */
-        margin-right: 0 !important; /* SaÄŸ margin sÄ±fÄ±rlandÄ± */
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
-
   .container-fluid.px-0 .row {
-            margin-left: 0 !important; /* Row sol boÅŸluÄŸu sÄ±fÄ±rlandÄ± */
-            margin-right: 0 !important; /* Row saÄŸ boÅŸluÄŸu sÄ±fÄ±rlandÄ± */
-            padding-left: 0; /* Row sol padding sÄ±fÄ±rlandÄ± */
-            padding-right: 0; /* Row saÄŸ padding sÄ±fÄ±rlandÄ± */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
-
   .outer-wrap {
-        max-width: 100%; /* GeniÅŸlik tam olsun */
+    max-width: 1200px;
     background-color: var(--white-color);
-        margin-left: 0 !important; /* Sol boÅŸluk sÄ±fÄ±rlandÄ± */
-        margin-right: 0 !important; /* SaÄŸ boÅŸluk sÄ±fÄ±rlandÄ± */
-        box-shadow: none; /* GÃ¶lge kaldÄ±rÄ±ldÄ± */
-        margin-top: 0; /* Ãœst boÅŸluk sÄ±fÄ±rlandÄ± */
-        padding-bottom: 0; /* Alt boÅŸluk sÄ±fÄ±rlandÄ± */
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 13px 48px 0px rgba(255, 104, 26, 0.07);
+    margin-top: -70px;
+    padding-bottom: 37px;
   }
-
   .outer-wrap.wrap-style1 {
-            padding-top: 0; /* YukarÄ±dan boÅŸluk kaldÄ±rÄ±ldÄ± */
-            padding-bottom: 0; /* AÅŸaÄŸÄ±dan boÅŸluk kaldÄ±rÄ±ldÄ± */
+    padding-top: calc(var(--section-space) - 40px);
+    padding-bottom: calc(var(--section-space) - 80px);
   }
 }
-
 /*------------------- 2.2. Grid -------------------*/
 @media (min-width: 767px) {
   .row:not([class*=gx-]) {
@@ -4469,7 +4433,12 @@ Header Customization
 .hero-layout1,
 .hero-layout2,
 .hero-layout4 {
-  position: relative;
+    width: 100vw !important; /* Ekranýn tamamýna yayýl */
+    margin: 0 !important; /* Kenarlarda hiçbir boþluk býrakma */
+    padding: 0 !important; /* Padding'i sýfýrla */
+    position: relative;
+    left: 0 !important; /* Soldan hiçbir boþluk kalmasýn */
+    right: 0 !important; /* Saðdan hiçbir boþluk kalmasýn */
 }
 .hero-layout .form-group > i,
 .hero-layout1 .form-group > i,
@@ -4515,7 +4484,12 @@ Header Customization
 }
 
 .hero-layout {
+    width: 100vw !important; /* Ekranýn tamamýna yayýl */
+    margin: 0 !important; /* Kenarlarda hiçbir boþluk býrakma */
+    padding: 0 !important; /* Padding'i sýfýrla */
     position: relative;
+    left: 0 !important; /* Soldan hiçbir boþluk kalmasýn */
+    right: 0 !important; /* Saðdan hiçbir boþluk kalmasýn */
 }
 .hero-layout .hero-img {
   position: relative;
@@ -4601,7 +4575,12 @@ Header Customization
 }
 
 .hero-layout1 {
-  margin-top: -100px;
+    width: 100vw !important; /* Ekranýn tamamýna yayýl */
+    margin: 0 !important; /* Kenarlarda hiçbir boþluk býrakma */
+    padding: 0 !important; /* Padding'i sýfýrla */
+    position: relative;
+    left: 0 !important; /* Soldan hiçbir boþluk kalmasýn */
+    right: 0 !important; /* Saðdan hiçbir boþluk kalmasýn */
 }
 .hero-layout1 .hero-mask {
   padding-top: 200px;
@@ -4643,7 +4622,12 @@ Header Customization
 }
 
 .hero-layout2 {
-  position: relative;
+    width: 100vw !important; /* Ekranýn tamamýna yayýl */
+    margin: 0 !important; /* Kenarlarda hiçbir boþluk býrakma */
+    padding: 0 !important; /* Padding'i sýfýrla */
+    position: relative;
+    left: 0 !important; /* Soldan hiçbir boþluk kalmasýn */
+    right: 0 !important; /* Saðdan hiçbir boþluk kalmasýn */
 }
 .hero-layout2 .hero-mask {
   padding-bottom: 160px;
@@ -8401,7 +8385,12 @@ Header Customization
 
 .hero-layout4,
 .hero-layout5 {
-  position: relative;
+    width: 100vw !important; /* Ekranýn tamamýna yayýl */
+    margin: 0 !important; /* Kenarlarda hiçbir boþluk býrakma */
+    padding: 0 !important; /* Padding'i sýfýrla */
+    position: relative;
+    left: 0 !important; /* Soldan hiçbir boþluk kalmasýn */
+    right: 0 !important; /* Saðdan hiçbir boþluk kalmasýn */
 }
 .hero-layout4 .hero-slide,
 .hero-layout5 .hero-slide {
