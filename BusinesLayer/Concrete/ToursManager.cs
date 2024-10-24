@@ -1,5 +1,6 @@
 ﻿using BusinesLayer.Abstract;
 using DataAccesLayer.Abstract;
+using DTOLayer.TourDTO;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -12,35 +13,47 @@ namespace BusinesLayer.Concrete
     public class ToursManager : IToursService
     {
         private readonly IToursDal toursDal;
-        public ToursManager(IToursDal toursDal)
+        private readonly TourMapper tourMapper;
+        public ToursManager(IToursDal toursDal,TourMapper tourMapper)
         {
             this.toursDal = toursDal;
+            this.tourMapper = tourMapper;
         }
 
-        public void TDelete(Tours entity)
+        public void TDelete(TourViewDTO tourViewDTO)
         {
-            entity.IsDeleted = true;
-            toursDal.Update(entity);
+            Tours tours = tourMapper.MapDtoToTour(tourViewDTO);
+            tours.IsDeleted = true;
+            toursDal.Update(tours);
         }
 
-        public List<Tours> TGetAll()
+        public List<TourViewDTO> TGetAll()
         {
-            return toursDal.GetAll();
+            List<Tours> tourList = toursDal.GetAll().ToList();
+            List<TourViewDTO> tourViewDTOs = null;
+            foreach (var tours in tourList)
+            {
+                tourViewDTOs.Add(tourMapper.MapTourToDto(tours));
+            }
+            return tourViewDTOs;
         }
 
-        public Tours TGetById(int id)
+        public TourViewDTO TGetById(int id)
         {
-            return toursDal.GetById(id);
+            Tours tours = toursDal.GetById(id);
+            return tourMapper.MapTourToDto(tours);
         }
 
-        public void TInsert(Tours entity)
+        public void TInsert(TourViewDTO tourViewDTO)
         {
-            toursDal.Add(entity);
+            Tours tours = tourMapper.MapDtoToTour(tourViewDTO);
+            toursDal.Add(tours);
         }
 
-        public void TUpdate(Tours entity)
+        public void TUpdate(TourViewDTO tourViewDTO)
         {
-            toursDal.Update(entity);
+            Tours tours = tourMapper.MapDtoToTour(tourViewDTO);
+            toursDal.Add(tours);
         }
     }
 }

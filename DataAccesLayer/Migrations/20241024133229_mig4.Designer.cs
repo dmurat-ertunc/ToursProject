@@ -4,6 +4,7 @@ using DataAccesLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccesLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20241024133229_mig4")]
+    partial class mig4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -225,9 +228,14 @@ namespace DataAccesLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long?>("ToursId")
+                        .HasColumnType("bigint");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CityId");
+
+                    b.HasIndex("ToursId");
 
                     b.ToTable("TblStations");
                 });
@@ -367,21 +375,6 @@ namespace DataAccesLayer.Migrations
                     b.ToTable("ServicesTours");
                 });
 
-            modelBuilder.Entity("StationsTours", b =>
-                {
-                    b.Property<long>("StationsId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("ToursId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("StationsId", "ToursId");
-
-                    b.HasIndex("ToursId");
-
-                    b.ToTable("StationsTours");
-                });
-
             modelBuilder.Entity("CitiesTours", b =>
                 {
                     b.HasOne("EntityLayer.Concrete.Cities", null)
@@ -415,6 +408,10 @@ namespace DataAccesLayer.Migrations
                         .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("EntityLayer.Concrete.Tours", null)
+                        .WithMany("Stations")
+                        .HasForeignKey("ToursId");
 
                     b.Navigation("City");
                 });
@@ -456,21 +453,6 @@ namespace DataAccesLayer.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("StationsTours", b =>
-                {
-                    b.HasOne("EntityLayer.Concrete.Stations", null)
-                        .WithMany()
-                        .HasForeignKey("StationsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EntityLayer.Concrete.Tours", null)
-                        .WithMany()
-                        .HasForeignKey("ToursId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("EntityLayer.Concrete.Cities", b =>
                 {
                     b.Navigation("Stations");
@@ -484,6 +466,8 @@ namespace DataAccesLayer.Migrations
             modelBuilder.Entity("EntityLayer.Concrete.Tours", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("Stations");
 
                     b.Navigation("TicketsSolds");
                 });

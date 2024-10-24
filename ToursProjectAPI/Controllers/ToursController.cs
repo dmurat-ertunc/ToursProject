@@ -16,7 +16,7 @@ namespace ToursProjectAPI.Controllers
         [HttpGet]
         public IActionResult GetAllTours()
         {
-            var values = toursService.TGetAll().ToList();
+            var values = toursService.TGetAll();
             return Ok(values);
         }
     }
