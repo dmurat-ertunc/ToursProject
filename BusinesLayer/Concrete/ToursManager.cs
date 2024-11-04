@@ -19,7 +19,7 @@ namespace BusinesLayer.Concrete
 
         public void TDelete(Tours tours)
         {
-            tours.IsDeleted = false;
+            tours.IsDeleted = true;
             toursDal.Update(tours);
         }
 
