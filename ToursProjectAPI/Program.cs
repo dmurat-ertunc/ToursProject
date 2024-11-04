@@ -3,7 +3,6 @@ using BusinesLayer.Concrete;
 using DataAccesLayer.Abstract;
 using DataAccesLayer.Concrete;
 using DataAccesLayer.EfDal;
-using DTOLayer.TourDTO;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,7 +34,6 @@ builder.Services.AddScoped<IToursService, ToursManager>();
 builder.Services.AddScoped<ITourTimeDal, EfTourTimeDal>();
 builder.Services.AddScoped<ITourTimeService, TourTimeManager>();
 
-builder.Services.AddScoped<TourMapper>();
 
 var app = builder.Build();
 

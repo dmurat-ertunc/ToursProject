@@ -1,5 +1,4 @@
-﻿using DTOLayer.TourDTO;
-using EntityLayer.Concrete;
+﻿using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +9,10 @@ namespace BusinesLayer.Abstract
 {
     public interface IToursService
     {
-        void TInsert(TourViewDTO entity);
-        void TUpdate(TourViewDTO entity);
-        void TDelete(TourViewDTO entity);
-        List<TourViewDTO> TGetAll();
-        TourViewDTO TGetById(int id);
+        void TInsert(Tours entity);
+        void TUpdate(Tours entity);
+        void TDelete(Tours entity);
+        List<Tours> TGetAll();
+        Tours TGetById(int id);
     }
 }

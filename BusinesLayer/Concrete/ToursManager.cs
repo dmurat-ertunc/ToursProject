@@ -1,6 +1,5 @@
 ﻿using BusinesLayer.Abstract;
 using DataAccesLayer.Abstract;
-using DTOLayer.TourDTO;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -13,47 +12,35 @@ namespace BusinesLayer.Concrete
     public class ToursManager : IToursService
     {
         private readonly IToursDal toursDal;
-        private readonly TourMapper tourMapper;
-        public ToursManager(IToursDal toursDal,TourMapper tourMapper)
+        public ToursManager(IToursDal toursDal)
         {
             this.toursDal = toursDal;
-            this.tourMapper = tourMapper;
         }
 
-        public void TDelete(TourViewDTO tourViewDTO)
+        public void TDelete(Tours tours)
         {
-            Tours tours = tourMapper.MapDtoToTour(tourViewDTO);
             tours.IsDeleted = true;
             toursDal.Update(tours);
         }
 
-        public List<TourViewDTO> TGetAll()
+        public List<Tours> TGetAll()
         {
-            List<Tours> tourList = toursDal.GetAll().ToList();
-            List<TourViewDTO> tourViewDTOs = null;
-            foreach (var tours in tourList)
-            {
-                tourViewDTOs.Add(tourMapper.MapTourToDto(tours));
-            }
-            return tourViewDTOs;
+            return toursDal.GetAll();
         }
 
-        public TourViewDTO TGetById(int id)
+        public Tours TGetById(int id)
         {
-            Tours tours = toursDal.GetById(id);
-            return tourMapper.MapTourToDto(tours);
+            return toursDal.GetById(id);
         }
 
-        public void TInsert(TourViewDTO tourViewDTO)
+        public void TInsert(Tours tours)
         {
-            Tours tours = tourMapper.MapDtoToTour(tourViewDTO);
             toursDal.Add(tours);
         }
 
-        public void TUpdate(TourViewDTO tourViewDTO)
+        public void TUpdate(Tours tours)
         {
-            Tours tours = tourMapper.MapDtoToTour(tourViewDTO);
-            toursDal.Add(tours);
+            toursDal.Update(tours);
         }
     }
 }
