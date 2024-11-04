@@ -12,7 +12,7 @@ namespace EntityLayer.Concrete
         public string description { get; set; }
         public int price { get; set; }
         public long ToursTimeId { get; set; }
-        public TourTime TourTime { get; set; }  // Navigation property, this can be renamed to TourTimeDetails or similar
+        public TourTime TourTime { get; set; }  
         public string fotoUrl1 { get; set; }
         public string fotoUrl2 { get; set; }
         public string fotoUrl3 { get; set; }

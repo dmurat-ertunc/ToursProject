@@ -11,6 +11,7 @@ namespace EntityLayer.Concrete
         public string Name { get; set; }
         public long CityId { get; set; }
         public Cities City { get; set; }
+        public ICollection<Tours> Tours { get; set; }
     }
 
 }
