@@ -1,4 +1,7 @@
-﻿using BusinesLayer.Abstract;
+﻿
+using BusinesLayer.Abstract;
+using DTOLayer.DTO;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,8 +19,8 @@ namespace ToursProjectAPI.Controllers
         [HttpGet]
         public IActionResult GetAllTours()
         {
-            var values = toursService.TGetAll();
-            return Ok(values);
+            var tour = toursService.TGetAll();
+            return Ok(tour);
         }
     }
 }

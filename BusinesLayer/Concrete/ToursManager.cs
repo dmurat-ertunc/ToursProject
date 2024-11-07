@@ -1,5 +1,6 @@
 ﻿using BusinesLayer.Abstract;
 using DataAccesLayer.Abstract;
+using DTOLayer.DTO;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace BusinesLayer.Concrete
     public class ToursManager : IToursService
     {
         private readonly IToursDal toursDal;
+        public TourMappingProfile tourMappingProfile;
         public ToursManager(IToursDal toursDal)
         {
             this.toursDal = toursDal;
@@ -25,7 +27,22 @@ namespace BusinesLayer.Concrete
 
         public List<Tours> TGetAll()
         {
+            //List<Tours> tours = toursDal.GetAll();
+            //List<TourDto> tourDtos = new List<TourDto>();
+            //if (tours != null)
+            //{
+            //    foreach (Tours tour in tours)
+            //    {
+            //        tourDtos.Add(tourMappingProfile.entityToDto(tour));
+            //    }
+            //    return tourDtos;
+            //}
+            //else
+            //{
+            //    return tourDtos;
+            //}
             return toursDal.GetAll();
+            
         }
 
         public Tours TGetById(int id)

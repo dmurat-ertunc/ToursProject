@@ -3,6 +3,8 @@ using BusinesLayer.Concrete;
 using DataAccesLayer.Abstract;
 using DataAccesLayer.Concrete;
 using DataAccesLayer.EfDal;
+using DTOLayer.DTO;
+using EntityLayer.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
