@@ -23,9 +23,9 @@ namespace BusinesLayer.Concrete
             citiesDal.Delete(entity);
         }
 
-        public List<Cities> TGetAll()
-        {
-            return citiesDal.GetAll();
+        public async Task<List<Cities>> TGetAll()
+        { 
+            return await citiesDal.GetAll();
         }
 
         public Cities TGetById(int id)

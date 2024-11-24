@@ -1,5 +1,6 @@
 ﻿using DataAccesLayer.Abstract;
 using DataAccesLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,9 +29,9 @@ namespace DataAccesLayer.Repository
             context.SaveChanges();
         }
 
-        public List<T> GetAll()
+        public async Task<List<T>> GetAll()
         {
-            return context.Set<T>().ToList();
+            return await context.Set<T>().ToListAsync();
         }
 
         public T GetById(int id)

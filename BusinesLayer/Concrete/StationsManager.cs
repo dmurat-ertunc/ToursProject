@@ -22,9 +22,9 @@ namespace BusinesLayer.Concrete
             stationsDal.Update(entity);
         }
 
-        public List<Stations> TGetAll()
+        public async Task<List<Stations>> TGetAll()
         {
-            return stationsDal.GetAll();
+            return await stationsDal.GetAll();
         }
 
         public Stations TGetById(int id)

@@ -1,5 +1,6 @@
 ﻿using BusinesLayer.Abstract;
 using DataAccesLayer.Abstract;
+using DataAccesLayer.Concrete;
 using DTOLayer.DTO;
 using EntityLayer.Concrete;
 using System;
@@ -19,30 +20,14 @@ namespace BusinesLayer.Concrete
             this.toursDal = toursDal;
         }
 
-        public void TDelete(Tours tours)
+        public void TDelete(Tours entity)
         {
-            tours.IsDeleted = true;
-            toursDal.Update(tours);
+            throw new NotImplementedException();
         }
 
-        public List<Tours> TGetAll()
+        public async Task<List<Tours>> TGetAll()
         {
-            //List<Tours> tours = toursDal.GetAll();
-            //List<TourDto> tourDtos = new List<TourDto>();
-            //if (tours != null)
-            //{
-            //    foreach (Tours tour in tours)
-            //    {
-            //        tourDtos.Add(tourMappingProfile.entityToDto(tour));
-            //    }
-            //    return tourDtos;
-            //}
-            //else
-            //{
-            //    return tourDtos;
-            //}
-            return toursDal.GetAll();
-            
+            return await toursDal.GetAll();
         }
 
         public Tours TGetById(int id)

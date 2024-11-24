@@ -15,9 +15,9 @@ namespace ToursProjectAPI.Controllers
             this.contactService = contactService;
         }
         [HttpGet]
-        public IActionResult GetAllContacts()
+        public async Task<IActionResult> GetAllContacts()
         {
-            var values = contactService.TGetAll().ToList();
+            var values = await contactService.TGetAll();
             return Ok(values);  
         }
     }

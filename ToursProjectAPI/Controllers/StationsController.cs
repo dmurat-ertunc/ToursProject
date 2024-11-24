@@ -14,9 +14,9 @@ namespace ToursProjectAPI.Controllers
             this.stationsService = stationsService;
         }
         [HttpGet]
-        public IActionResult GetAllStations()
+        public async Task<IActionResult> GetAllStations()
         {
-            var values = stationsService.TGetAll().ToList();
+            var values = await stationsService.TGetAll();
             return Ok(values);
         }
     }

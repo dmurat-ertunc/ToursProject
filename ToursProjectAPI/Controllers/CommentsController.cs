@@ -14,9 +14,9 @@ namespace ToursProjectAPI.Controllers
             this.commentsService = commentsService;
         }
         [HttpGet]
-        public IActionResult GetAllComment()
+        public async Task<IActionResult> GetAllComment()
         {
-            var values = commentsService.TGetAll();
+            var values = await commentsService.TGetAll();
             return Ok(values);
         }
     }

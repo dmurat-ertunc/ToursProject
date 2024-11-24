@@ -37,6 +37,7 @@ builder.Services.AddScoped<ITourTimeDal, EfTourTimeDal>();
 builder.Services.AddScoped<ITourTimeService, TourTimeManager>();
 
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

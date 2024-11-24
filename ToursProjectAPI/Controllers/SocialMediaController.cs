@@ -14,9 +14,9 @@ namespace ToursProjectAPI.Controllers
             this.socialMediaService = socialMediaService;
         }
         [HttpGet]
-        public IActionResult GetAllSocialMedia()
+        public async Task<IActionResult> GetAllSocialMedia()
         {
-            var values = socialMediaService.TGetAll().ToList();
+            var values = await socialMediaService.TGetAll();
             return Ok(values);
         }
     }

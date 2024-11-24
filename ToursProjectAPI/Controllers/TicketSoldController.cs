@@ -15,9 +15,9 @@ namespace ToursProjectAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllTicketSolds()
+        public async Task<IActionResult> GetAllTicketSolds()
         {
-            var values = ticketSoldService.TGetAll().ToList();
+            var values = await ticketSoldService.TGetAll();
             return Ok(values);
         }
     }

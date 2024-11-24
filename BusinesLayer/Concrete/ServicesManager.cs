@@ -22,9 +22,9 @@ namespace BusinesLayer.Concrete
             serviceDal.Update(entity);
         }
 
-        public List<Services> TGetAll()
+        public async Task<List<Services>> TGetAll()
         {
-            return serviceDal.GetAll();
+            return await serviceDal.GetAll();
         }
 
         public Services TGetById(int id)

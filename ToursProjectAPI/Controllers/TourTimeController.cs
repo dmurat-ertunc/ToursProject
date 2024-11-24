@@ -14,9 +14,9 @@ namespace ToursProjectAPI.Controllers
             this.tourTimeService = tourTimeService;
         }
         [HttpGet]
-        public IActionResult GetAllTourTimes()
+        public async Task<IActionResult> GetAllTourTimes()
         {
-            var values = tourTimeService.TGetAll().ToList();
+            var values = await tourTimeService.TGetAll();
             return Ok(values);
         }
     }

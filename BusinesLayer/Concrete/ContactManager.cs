@@ -22,9 +22,9 @@ namespace BusinesLayer.Concrete
             contactsDal.Update(entity);
         }
 
-        public List<Contact> TGetAll()
+        public async Task<List<Contact>> TGetAll()
         {
-            return contactsDal.GetAll();
+            return await contactsDal.GetAll();
         }
 
         public Contact TGetById(int id)

@@ -22,9 +22,9 @@ namespace BusinesLayer.Concrete
             socialMediaDal.Update(entity);
         }
 
-        public List<SocialMedia> TGetAll()
+        public async Task<List<SocialMedia>> TGetAll()
         {
-            return socialMediaDal.GetAll();
+            return await socialMediaDal.GetAll();
         }
 
         public SocialMedia TGetById(int id)

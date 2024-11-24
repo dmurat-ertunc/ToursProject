@@ -22,9 +22,9 @@ namespace BusinesLayer.Concrete
             ticketsSoldDal.Update(entity);
         }
 
-        public List<TicketSold> TGetAll()
+        public async Task<List<TicketSold>> TGetAll()
         {
-            return ticketsSoldDal.GetAll();
+            return await ticketsSoldDal.GetAll();
         }
 
         public TicketSold TGetById(int id)

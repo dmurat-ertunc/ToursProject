@@ -10,7 +10,7 @@ namespace EntityLayer.Concrete
     {
         public string Name { get; set; }  // Corrected to PascalCase
         public ICollection<Stations> Stations { get; set; } = null; // Singular form for related class
-        public ICollection<Tours> Tours { get; set; } = null; // Singular form for related class
+        public virtual ICollection<Tours> Tours { get; set; } = null; // Singular form for related class
     }
 
 }

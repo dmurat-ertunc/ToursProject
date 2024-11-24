@@ -16,8 +16,8 @@ namespace ToursProjectAPI.Controllers
             this.citiesService = citiesService;
         }
         [HttpGet]
-        public IActionResult GetCities() {
-            var values = citiesService.TGetAll();
+        public async Task<IActionResult> GetCities() {
+            var values = await citiesService.TGetAll();
             return Ok(values);
         }
 

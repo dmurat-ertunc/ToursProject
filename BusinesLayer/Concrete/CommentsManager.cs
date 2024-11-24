@@ -23,9 +23,9 @@ namespace BusinesLayer.Concrete
             commentsDal.Update(entity);
         }
 
-        public List<Comments> TGetAll()
+        public async Task<List<Comments>> TGetAll()
         {
-            return commentsDal.GetAll();
+            return await commentsDal.GetAll();
         }
 
         public Comments TGetById(int id)

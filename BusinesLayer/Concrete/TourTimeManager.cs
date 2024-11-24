@@ -23,9 +23,9 @@ namespace BusinesLayer.Concrete
             tourTimeDal.Update(entity);
         }
 
-        public List<TourTime> TGetAll()
+        public async Task<List<TourTime>> TGetAll()
         {
-            return tourTimeDal.GetAll();
+            return await tourTimeDal.GetAll();
         }
 
         public TourTime TGetById(int id)

@@ -11,7 +11,7 @@ namespace BusinesLayer.Abstract
         void TInsert(T entity);
         void TUpdate(T entity);
         void TDelete(T entity);
-        List<T> TGetAll();
+        Task<List<T>> TGetAll();
         T TGetById(int id);
     }
 }

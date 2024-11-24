@@ -19,9 +19,9 @@ namespace EntityLayer.Concrete
         public DateTime TourDateTime { get; set; } // Changed name to avoid conflict
         public ICollection<Comments> Comments { get; set; }
         public ICollection<TicketSold> TicketsSolds { get; set; }
-        public ICollection<Stations> Stations { get; set; }
-        public ICollection<Services> Services { get; set; }
-        public ICollection<Cities> Cities { get; set; }
+        public virtual ICollection<Stations> Stations { get; set; }
+        public virtual ICollection<Services> Services { get; set; }
+        public virtual ICollection<Cities> Cities { get; set; }
     }
 
 }
