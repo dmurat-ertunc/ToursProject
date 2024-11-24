@@ -4433,7 +4433,12 @@ Header Customization
 .hero-layout1,
 .hero-layout2,
 .hero-layout4 {
-  position: relative;
+    width: 100vw !important; /* Ekranýn tamamýna yayýl */
+    margin: 0 !important; /* Kenarlarda hiçbir boþluk býrakma */
+    padding: 0 !important; /* Padding'i sýfýrla */
+    position: relative;
+    left: 0 !important; /* Soldan hiçbir boþluk kalmasýn */
+    right: 0 !important; /* Saðdan hiçbir boþluk kalmasýn */
 }
 .hero-layout .form-group > i,
 .hero-layout1 .form-group > i,
@@ -4479,7 +4484,12 @@ Header Customization
 }
 
 .hero-layout {
+    width: 100vw !important; /* Ekranýn tamamýna yayýl */
+    margin: 0 !important; /* Kenarlarda hiçbir boþluk býrakma */
+    padding: 0 !important; /* Padding'i sýfýrla */
     position: relative;
+    left: 0 !important; /* Soldan hiçbir boþluk kalmasýn */
+    right: 0 !important; /* Saðdan hiçbir boþluk kalmasýn */
 }
 .hero-layout .hero-img {
   position: relative;
@@ -4565,7 +4575,12 @@ Header Customization
 }
 
 .hero-layout1 {
-  margin-top: -100px;
+    width: 100vw !important; /* Ekranýn tamamýna yayýl */
+    margin: 0 !important; /* Kenarlarda hiçbir boþluk býrakma */
+    padding: 0 !important; /* Padding'i sýfýrla */
+    position: relative;
+    left: 0 !important; /* Soldan hiçbir boþluk kalmasýn */
+    right: 0 !important; /* Saðdan hiçbir boþluk kalmasýn */
 }
 .hero-layout1 .hero-mask {
   padding-top: 200px;
@@ -4607,7 +4622,12 @@ Header Customization
 }
 
 .hero-layout2 {
-  position: relative;
+    width: 100vw !important; /* Ekranýn tamamýna yayýl */
+    margin: 0 !important; /* Kenarlarda hiçbir boþluk býrakma */
+    padding: 0 !important; /* Padding'i sýfýrla */
+    position: relative;
+    left: 0 !important; /* Soldan hiçbir boþluk kalmasýn */
+    right: 0 !important; /* Saðdan hiçbir boþluk kalmasýn */
 }
 .hero-layout2 .hero-mask {
   padding-bottom: 160px;
@@ -8365,7 +8385,12 @@ Header Customization
 
 .hero-layout4,
 .hero-layout5 {
-  position: relative;
+    width: 100vw !important; /* Ekranýn tamamýna yayýl */
+    margin: 0 !important; /* Kenarlarda hiçbir boþluk býrakma */
+    padding: 0 !important; /* Padding'i sýfýrla */
+    position: relative;
+    left: 0 !important; /* Soldan hiçbir boþluk kalmasýn */
+    right: 0 !important; /* Saðdan hiçbir boþluk kalmasýn */
 }
 .hero-layout4 .hero-slide,
 .hero-layout5 .hero-slide {
