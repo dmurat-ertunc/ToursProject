@@ -11,14 +11,14 @@
             <div class="vs-carousel" id="hero-slider" data-slide-show="1" autoplay="false">
                 <div class="hero-slide">
                     <div class="container">
-                        <div class="row align-items-center justify-content-end">
-                            <div class="col-lg-7">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-lg-6">
                                 <div class="hero-content">
                                     <span class="hero-subtitle">Tatil Zamanı!</span>
                                     <h1 class="hero-title">Türkiye'nin Güzelliklerini Keşfedin</h1>
                                     <p class="hero-text">
                                         Türkiye'nin eşsiz güzelliklerini keşfedin! Tarih ve doğanın iç içe geçtiği bu muhteşem ülkede,
-                                        etkileyici antik kalıntılardan nefes kesen manzaralara, canlı kültürel mirastan lezzet dolu mutfak 
+                                        etkileyici antik kalıntılardan nefes kesen manzaralara, canlı kültürel mirastan lezzet dolu mutfak
                                         sırlarına kadar her adımda yeni keşifler sizi bekliyor
                                     </p>
                                     <a href="about.html" class="vs-btn style4">Daha Fazla</a>
@@ -35,8 +35,8 @@
                 </div>
                 <div class="hero-slide">
                     <div class="container">
-                        <div class="row align-items-center justify-content-end">
-                            <div class="col-lg-7">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-lg-6">
                                 <div class="hero-content">
                                     <span class="hero-subtitle">Tatil Zamanı!</span>
                                     <h1 class="hero-title">Hayalinizdeki Tatili Yaşayın</h1>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="slide-count vs-slider-tab" data-asnavfor="#hero-slider">
                 <button class="tab-btn active">1</button>
@@ -109,7 +109,6 @@
     <!-- ============================
         Hero Area End
       ==============================-->
-    
     <!--==============================
         Tour Package Area Start
       ==============================-->
@@ -136,9 +135,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row vs-carousel" data-slide-show="3" data-arrows="false" data-lg-slide-show="3" data-md-slide-show="2"
+            <div class="row vs-carousel" data-slide-show="4" data-arrows="false" data-lg-slide-show="3" data-md-slide-show="2"
                  data-sm-slide-show="1">
-                @foreach(var item in Model)
+                @foreach (var item in Model)
                 {
                     <div class="col-xl-3 col-lg-6 col-sm-6">
                         <div class="package-style1">
@@ -150,7 +149,7 @@
                             </div>
                             <div class="package-content">
                                 <h3 class="package-title"><a href="tour-booking.html">@item.Title</a></h3>
-                                @foreach(var city in item.CityName)
+                                @foreach (var city in item.CityName)
                                 {
                                     <p class="package-text" style="display: inline; margin-right: 10px;">@city</p>
                                 }
@@ -198,18 +197,17 @@
     <!--==============================
         Tour Package Area End
       ==============================-->
-  
     <!--==============================
         Features Area Start
       ==============================-->
     <section class="space-extra-bottom">
         <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-xl-6">
-                    <div class="img-box5">
-                        <div class="img-box__img1">
-                            <img class="img1" src="/download version/assets/img/about/about-5-1.jpg" alt="about image">
-                            <img class="img2" src="/download version/assets/img/about/about-5-2.jpg" alt="about image">
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-sm-6 col-12">
+                    <div class="features-style1">
+                        <div class="features-bg" data-bg-src="/download version/assets/img/shape/features.png"></div>
+                        <div class="features-image">
+                            <img src="/download version/assets/img/features/features-1-1.png" alt="image">
                         </div>
                         <div class="features-content">
                             <h3 class="features-title">Özel Aktiviteler</h3>
@@ -267,10 +265,6 @@
     <!--==============================
         Features Area End
       ==============================-->
-
-
-
-
     <!--==============================
       Cart Side bar
     ============================== -->
@@ -317,7 +311,25 @@
     <a href="#" class="scrollToTop scroll-btn"><i class="far fa-arrow-up"></i></a>
 
     <!--==============================
-      Blogs Area End
-    ==============================-->
+        All Js File
+      ============================== -->
+    <!-- Jquery -->
+    <script src="/download version/assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider -->
+    <script src="/download version/assets/js/slick.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/download version/assets/js/bootstrap.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="/download version/assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- jquery Ui -->
+    <script src="/download version/assets/js/jquery-ui.min.js"></script>
+    <!-- Circle Progress -->
+    <script src="/download version/assets/js/circle-progress.min.js"></script>
+    <!-- isotope -->
+    <script src="/download version/assets/js/imagesLoaded.js"></script>
+    <script src="/download version/assets/js/isotope.js"></script>
+    <!-- Wow.js -->
+    <script src="/download version/assets/js/wow.min.js"></script>
+    <!-- Main Js File -->
+    <script src="/download version/assets/js/main.js"></script>
 </body>
-
