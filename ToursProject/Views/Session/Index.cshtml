@@ -37,16 +37,13 @@
                         <form action="#" class="signup-form bg-smoke">
                             <h2 class="form-title text-center mb-lg-35">Giriş Yap</h2>
                             <div class="form-group">
-                                <label for="loginUserId" class="sr-only">Username or email address*</label>
                                 <input type="text" class="form-control" placeholder="Kullanıcı adı" id="loginUserId" name="loginUserId" required>
                             </div>
                             <div class="form-group">
-                                <label for="loginUserPass" class="sr-only">Password*</label>
                                 <input type="password" class="form-control" placeholder="Şifre" id="loginUserPass" name="loginUserPass" required>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="loginRemember" id="loginRemember">
-                                <label for="loginRemember">Beni Hatırla</label>
                             </div>
                             <div class="form-group mb-0 text-center">
                                 <button class="btn btn-success w-100" type="submit">Giriş Yap</button>
@@ -59,47 +56,40 @@
 
                     <!-- Sign Up Form -->
                     <div id="signUpForm" class="form-container">
-                        <form action="#" class="signup-form bg-smoke">
+                        <form action="SignUp" method="post" class="signup-form bg-smoke">
                             <h2 class="form-title text-center mb-lg-35">Üye Ol</h2>
                             <div class="form-group">
-                                <label for="signUpUsername" class="sr-only">Kullanıcı Adı</label>
                                 <input type="text" class="form-control" placeholder="Kullanıcı Adı" id="signUpUsername"
-                                       name="signUpUsername" required>
+                                       name="userName" required>
                             </div>
                             <div class="form-group">
-                                <label for="signUpEmail" class="sr-only">Email*</label>
-                                <input type="email" class="form-control" placeholder="E Posta" id="signUpEmail"
-                                       name="signUpEmail" required>
+                                <input type="text" class="form-control" placeholder="E Posta" id="signUpEmail"
+                                       name="mail" required>
                             </div>
                             <div class="form-group">
-                                <label for="signUpEmail" class="sr-only">Email*</label>
-                                <input type="email" class="form-control" placeholder="İsim" id="signUpEmail"
-                                       name="signUpEmail" required>
+                                <input type="text" class="form-control" placeholder="İsim" id="signUpEmail"
+                                       name="name" required>
                             </div>
                             <div class="form-group">
-                                <label for="signUpEmail" class="sr-only">Email*</label>
-                                <input type="email" class="form-control" placeholder="Soyisim" id="signUpEmail"
-                                       name="signUpEmail" required>
+                                <input type="text" class="form-control" placeholder="Soyisim" id="signUpEmail"
+                                       name="surName" required>
                             </div>
                             <div class="form-group">
-                                <label for="signUpEmail" class="sr-only">Uyruk Seçiniz</label>
-                                <select class="form-control" id="signUpEmail" name="signUpEmail" required>
+                                <select class="form-control" id="signUpEmail" name="nationality" required>
                                     <option value="" disabled selected>Uyruk Seçiniz</option>
-                                    <option value="tr">Türkiye</option>
-                                    <option value="us">Amerika Birleşik Devletleri</option>
-                                    <option value="cn">Çin</option>
-                                    <option value="fr">Fransa</option>
+                                    <option value="Türkiye">Türkiye</option>
+                                    <option value="Amerika Birleşik Devletleri">Amerika Birleşik Devletleri</option>
+                                    <option value="Çin">Çin</option>
+                                    <option value="Fransa">Fransa</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="signUpEmail" class="sr-only">Email*</label>
-                                <input type="email" class="form-control" placeholder="Kimlik Numaranız" id="signUpEmail"
-                                       name="signUpEmail" required>
+                                <input type="number" class="form-control" placeholder="Kimlik Numaranız" id="signUpEmail"
+                                       name="tcno" required>
                             </div>
                             <div class="form-group">
-                                <label for="signUpPassword" class="sr-only">Password*</label>
                                 <input type="password" class="form-control" placeholder="Şifre" id="signUpPassword"
-                                       name="signUpPassword" required>
+                                       name="password" required>
                             </div>
                             <div class="form-group mb-0 text-center">
                                 <button class="btn btn-success w-100" type="submit">Üye Ol</button>
