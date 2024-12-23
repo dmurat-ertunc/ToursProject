@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .form-container {
+            display: none;
+        }
+
+            .form-container.active {
+                display: block;
+            }
+    </style>
+</head>
+<body >
+    <div class="signup-wrapper space">
+        <div class="container" style="margin-top:-110px;">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <!-- Button Section -->
+                    <div class="d-flex justify-content-center mb-4">
+                        <button class="btn btn-warning mr-2" id="showLoginForm">Giriş Yap</button>
+                        <button class="btn btn-warning" id="showSignUpForm">Üye Ol</button>
+                    </div>
+
+                    <!-- Login Form -->
+                    <div id="loginForm" class="form-container active">
+                        <form action="#" class="signup-form bg-smoke">
+                            <h2 class="form-title text-center mb-lg-35">Giriş Yap</h2>
+                            <div class="form-group">
+                                <label for="loginUserId" class="sr-only">Username or email address*</label>
+                                <input type="text" class="form-control" placeholder="Kullanıcı adı" id="loginUserId" name="loginUserId" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginUserPass" class="sr-only">Password*</label>
+                                <input type="password" class="form-control" placeholder="Şifre" id="loginUserPass" name="loginUserPass" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="loginRemember" id="loginRemember">
+                                <label for="loginRemember">Beni Hatırla</label>
+                            </div>
+                            <div class="form-group mb-0 text-center">
+                                <button class="btn btn-success w-100" type="submit">Giriş Yap</button>
+                                <div class="bottom-links link-inherit d-md-flex justify-content-between mt-3">
+                                    <a href="#" class="recovery-link mb-2 mb-md-0">Şifremi Unuttum</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Sign Up Form -->
+                    <div id="signUpForm" class="form-container">
+                        <form action="#" class="signup-form bg-smoke">
+                            <h2 class="form-title text-center mb-lg-35">Üye Ol</h2>
+                            <div class="form-group">
+                                <label for="signUpUsername" class="sr-only">Kullanıcı Adı</label>
+                                <input type="text" class="form-control" placeholder="Kullanıcı Adı" id="signUpUsername"
+                                       name="signUpUsername" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signUpEmail" class="sr-only">Email*</label>
+                                <input type="email" class="form-control" placeholder="E Posta" id="signUpEmail"
+                                       name="signUpEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signUpEmail" class="sr-only">Email*</label>
+                                <input type="email" class="form-control" placeholder="İsim" id="signUpEmail"
+                                       name="signUpEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signUpEmail" class="sr-only">Email*</label>
+                                <input type="email" class="form-control" placeholder="Soyisim" id="signUpEmail"
+                                       name="signUpEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signUpEmail" class="sr-only">Uyruk Seçiniz</label>
+                                <select class="form-control" id="signUpEmail" name="signUpEmail" required>
+                                    <option value="" disabled selected>Uyruk Seçiniz</option>
+                                    <option value="tr">Türkiye</option>
+                                    <option value="us">Amerika Birleşik Devletleri</option>
+                                    <option value="cn">Çin</option>
+                                    <option value="fr">Fransa</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="signUpEmail" class="sr-only">Email*</label>
+                                <input type="email" class="form-control" placeholder="Kimlik Numaranız" id="signUpEmail"
+                                       name="signUpEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signUpPassword" class="sr-only">Password*</label>
+                                <input type="password" class="form-control" placeholder="Şifre" id="signUpPassword"
+                                       name="signUpPassword" required>
+                            </div>
+                            <div class="form-group mb-0 text-center">
+                                <button class="btn btn-success w-100" type="submit">Üye Ol</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for toggling between forms
+        document.getElementById("showLoginForm").addEventListener("click", function () {
+            document.getElementById("loginForm").classList.add("active");
+            document.getElementById("signUpForm").classList.remove("active");
+        });
+
+        document.getElementById("showSignUpForm").addEventListener("click", function () {
+            document.getElementById("signUpForm").classList.add("active");
+            document.getElementById("loginForm").classList.remove("active");
+        });
+    </script>
+
+</body>
+</html>
