@@ -26,7 +26,7 @@ namespace ToursProject.Controllers
                 // JSON'u ApiResponse<ToursListViewModel> olarak deserialize et
                 var response = JsonConvert.DeserializeObject<ApiResponseSingle<ToursListViewModel>>(jsonData);
 
-                //// Gelen data içeriğini al
+                // Gelen data içeriğini al
                 var tour = response?.Data;
 
                 // View'e "tour" modelini gönder

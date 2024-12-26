@@ -42,8 +42,21 @@ namespace ToursProject.Controllers
         }
 
         [HttpPost]
-        public IActionResult SignIn()
+        public async Task<IActionResult> SignIn(SignInViewModel signInViewModel)
         {
+            var client = _httpClientFactory.CreateClient();
+            var jsonData = JsonConvert.SerializeObject(signInViewModel);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await client.PostAsync("http://localhost:9091/api/session/login", stringContent);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                // Yanıtı al ve deserialize et
+                var responseContent = await responseMessage.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<ApiResponseSingle<LoginResponse>>(responseContent);
+
+                // API'den gelen mesajı ViewBag'e at
+                //localstorage yapılacak
+            }
             return View();
         }
     }

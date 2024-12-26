@@ -1,4 +1,4 @@
-﻿namespace ToursProject.Models.ToursModel
+﻿namespace ToursProject.Models
 {
     public class ApiResponseSingle<T>
     {
