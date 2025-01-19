@@ -333,4 +333,13 @@
     <script src="/download version/assets/js/wow.min.js"></script>
     <!-- Main Js File -->
     <script src="/download version/assets/js/main.js"></script>
+    <script>
+        var token = '@ViewBag.Token';
+        if (token) {
+            localStorage.setItem('authToken', token);
+            console.log('Token saved to localStorage:', token);
+        } else {
+            console.log('No token received.');
+        }
+    </script>
 </body>

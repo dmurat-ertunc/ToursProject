@@ -15,8 +15,14 @@ namespace ToursProject.Controllers
             _httpClientFactory = httpClientFactory;
         }
         [HttpGet]
-        public async Task<IActionResult> Index()
-        {
+        public async Task<IActionResult> Index(string token)
+        {   
+
+            if(token != null)
+            {
+                ViewBag.Token = token;
+            }
+
             var client = _httpClientFactory.CreateClient();
    
             var responseMessage = await client.GetAsync("http://localhost:9091/api/tours/getAll");

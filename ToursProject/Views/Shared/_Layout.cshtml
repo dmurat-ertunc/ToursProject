@@ -155,7 +155,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <a class="user-btn" href="/Session/Index"><i class="far fa-user-circle">  Giriş Yap</i></a>
+                        <a class="user-btn" id="token-info" href="/session/Index"><i class="far fa-user-circle"></i></a>
                     </div>
                 </div>
             </div>
@@ -336,6 +336,18 @@
             </div>
         </div>
     </footer>
+        <script>
+            if (localStorage.getItem("authToken")) {
+                document.getElementById("token-info").innerHTML = `
+                        <i class="far fa-user-circle"></i> Token mevcut: ${localStorage.getItem("authToken")}
+                    `;
+            } else {
+                document.getElementById("token-info").innerHTML = `
+                        <i class="far fa-user-circle"></i> Giriş Yap.
+                    `;
+            }
+        </script>
+    }
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

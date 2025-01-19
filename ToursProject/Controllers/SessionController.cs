@@ -54,8 +54,10 @@ namespace ToursProject.Controllers
                 var responseContent = await responseMessage.Content.ReadAsStringAsync();
                 var result = JsonConvert.DeserializeObject<ApiResponseSingle<LoginResponse>>(responseContent);
 
-                // API'den gelen mesajı ViewBag'e at
-                //localstorage yapılacak
+                if (result?.Data?.Token != null)
+                {
+                    return RedirectToAction("Index","HomePage",new {token= result.Data.Token});
+                }
             }
             return View();
         }
